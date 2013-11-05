@@ -1,0 +1,25 @@
+*{
+	@include box-sizing(border-box);
+}
+
+.region{
+	width: 100%;
+	.inner{
+		width: 100%;
+		max-width: 1020px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+	&:before,
+	&:after{
+		display: table;
+		content: "";
+		line-height: 0;
+	}
+	&:after{
+		clear: both;
+	}
+}
+img, video, audio, canvas{
+	max-width: 100%;
+}
