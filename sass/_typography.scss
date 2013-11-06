@@ -4,26 +4,39 @@ body{
 }
 
 h1, h2, h3, h4, h5, h6{
-	margin-bottom: 0.8em;
+	line-height: normal;
+	max-width: 100%;
+	overflow: scroll;
 }
 h1{
-	font-size: 250%;
+	font-size: 4.209em;
+	margin-top: 0;
+	margin-bottom: 0.18em;
 }
 h2{
-	font-size: 200%;
+	font-size: 3.157em;
+	margin-bottom: 0.25em;
 }
 h3{
-	font-size: 180%;
+	font-size: 2.369em;
+	margin-bottom: 0.32em;
 }
 h4{
-	font-size: 150%;
+	font-size: 1.777em;
+	margin-bottom: 0.45em;
 }
 h5{
-	font-size: 120%;
+	font-size: 1.333em;
+	margin-bottom: 0.6em;
 }
 h6{
-	font-size: 100%;
+	font-size: 1em;
+	margin-bottom: 0.8em;
 }
-p{
+p, address, pre, details{
+	margin-bottom: 0.8em;
+}
+ol, ul{
+	padding-left: 1.3em;
 	margin-bottom: 0.8em;
 }

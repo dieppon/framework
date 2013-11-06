@@ -140,26 +140,28 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* @end */
 body { font-size: 16px; line-height: 1.5em; }
 
-h1, h2, h3, h4, h5, h6 { margin-bottom: 0.8em; }
+h1, h2, h3, h4, h5, h6 { line-height: normal; max-width: 100%; overflow: scroll; }
 
-h1 { font-size: 250%; }
+h1 { font-size: 4.209em; margin-top: 0; margin-bottom: 0.18em; }
 
-h2 { font-size: 200%; }
+h2 { font-size: 3.157em; margin-bottom: 0.25em; }
 
-h3 { font-size: 180%; }
+h3 { font-size: 2.369em; margin-bottom: 0.32em; }
 
-h4 { font-size: 150%; }
+h4 { font-size: 1.777em; margin-bottom: 0.45em; }
 
-h5 { font-size: 120%; }
+h5 { font-size: 1.333em; margin-bottom: 0.6em; }
 
-h6 { font-size: 100%; }
+h6 { font-size: 1em; margin-bottom: 0.8em; }
 
-p { margin-bottom: 0.8em; }
+p, address, pre, details { margin-bottom: 0.8em; }
+
+ol, ul { padding-left: 1.3em; margin-bottom: 0.8em; }
 
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 .region { width: 100%; }
-.region .inner { width: 100%; max-width: 1020px; margin: 0 auto; padding: 0 20px; }
+.region .inner { width: 100%; max-width: 1020px; margin: 0 auto; padding: 20px; }
 .region:before, .region:after { display: table; content: ""; line-height: 0; }
 .region:after { clear: both; }
 
