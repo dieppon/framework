@@ -1,3 +1,4 @@
+/* @group Layout */
 *{
 	@include box-sizing(border-box);
 }
@@ -23,3 +24,5 @@
 img, video, audio, canvas{
 	max-width: 100%;
 }
+
+/* @end */
