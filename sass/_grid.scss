@@ -145,7 +145,7 @@
 	&.linearise > .grid-item {
 		width: 100%;
 		margin-left: 0;
-		@media only screen and (min-height: 768px){
+		@media only screen and (min-width: 768px){
 			&.one-half {
 				width: 50%;
 			}
@@ -259,6 +259,15 @@
 			}
 			&.offset-one-tenth {
 				margin-left: 10%;
+			}
+		}
+	}
+	&.example{
+		.grid-item{
+			margin-bottom: 20px;
+			.content{
+				background-color: #ddd;
+				text-align: center;
 			}
 		}
 	}

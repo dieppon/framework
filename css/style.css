@@ -183,7 +183,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 .grid-row .grid-item.offset-one-eighth { margin-left: 12.5%; }
 .grid-row .grid-item.offset-one-tenth { margin-left: 10%; }
 .grid-row.linearise > .grid-item { width: 100%; margin-left: 0; }
-@media only screen and (min-height: 768px) { .grid-row.linearise > .grid-item.one-half { width: 50%; }
+@media only screen and (min-width: 768px) { .grid-row.linearise > .grid-item.one-half { width: 50%; }
   .grid-row.linearise > .grid-item.one-third { width: 33.333%; }
   .grid-row.linearise > .grid-item.two-third { width: 66.666%; }
   .grid-row.linearise > .grid-item.one-quarter { width: 25%; }
@@ -221,6 +221,8 @@ table { border-collapse: collapse; border-spacing: 0; }
   .grid-row.linearise > .grid-item.offset-one-sixth { margin-left: 16.666%; }
   .grid-row.linearise > .grid-item.offset-one-eighth { margin-left: 12.5%; }
   .grid-row.linearise > .grid-item.offset-one-tenth { margin-left: 10%; } }
+.grid-row.example .grid-item { margin-bottom: 20px; }
+.grid-row.example .grid-item .content { background-color: #ddd; text-align: center; }
 
 /* @end */
 /* @group Typpography */
@@ -248,11 +250,69 @@ ol, ul { padding-left: 1.3em; margin-bottom: 0.8em; }
 /* @group Layout */
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-.region { width: 100%; }
-.region .inner { width: 100%; max-width: 1020px; margin: 0 auto; padding: 20px; }
-.region:before, .region:after { display: table; content: ""; line-height: 0; }
-.region:after { clear: both; }
+.region { width: 100%; padding: 40px 0; }
+.region .inner { width: 100%; max-width: 1020px; margin: 0 auto; padding: 0 20px; }
+.region .inner:before, .region .inner:after { display: table; content: ""; line-height: 0; }
+.region .inner:after { clear: both; }
+
+#navigation { background: #f4f4f4; padding: 0; }
+
+#footer { padding-top: 0; }
+#footer nav { float: left; }
 
 img, video, audio, canvas { max-width: 100%; }
+
+/* @end */
+/* @groups Menus */
+/* Flexnav Base Styles */
+.flexnav { -webkit-transition: none; -moz-transition: none; -ms-transition: none; transition: none; -webkit-transform-style: preserve-3d; overflow: hidden; margin: 0 auto; width: 100%; max-height: 0; }
+.flexnav.opacity { opacity: 0; }
+.flexnav.show { max-height: 2000px; opacity: 1; -webkit-transition: all .5s ease-in-out; -moz-transition: all .5s ease-in-out; -ms-transition: all .5s ease-in-out; transition: all .5s ease-in-out; }
+.flexnav.one-page { position: fixed; top: 50px; right: 5%; max-width: 200px; }
+.flexnav li { font-size: 100%; position: relative; overflow: hidden; }
+.flexnav li a { position: relative; display: block; padding: .96em; z-index: 2; overflow: hidden; border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+.flexnav li ul { width: 100%; }
+.flexnav li ul li { font-size: 100%; position: relative; overflow: hidden; }
+.flexnav li ul.show li { overflow: visible; }
+.flexnav li ul li a { display: block; }
+.flexnav .touch-button { position: absolute; z-index: 999; top: 0; right: 0; width: 50px; height: 50px; display: inline-block; text-align: center; }
+.flexnav .touch-button:hover { cursor: pointer; }
+.flexnav .touch-button .navicon { font-style: normal; position: relative; top: 1.4em; font-size: 12px; }
+
+.menu-button { position: relative; display: block; padding: 1em; cursor: pointer; }
+.menu-button.one-page { position: fixed; top: 0; right: 5%; padding-right: 45px; }
+.menu-button .touch-button { background: transparent; position: absolute; z-index: 999; top: 0; right: 0; width: 50px; height: 50px; display: inline-block; text-align: center; }
+.menu-button .touch-button .navicon { font-size: 16px; position: relative; top: 1em; }
+
+@media all and (min-width: 768px) { body.one-page { padding-top: 70px; }
+  .flexnav { overflow: visible; }
+  .flexnav.opacity { opacity: 1; }
+  .flexnav.one-page { top: 0; right: auto; max-width: 1080px; }
+  .flexnav li { position: relative; list-style: none; float: left; display: block; overflow: visible; }
+  .flexnav li a { border-bottom: none; padding-right: 50px; }
+  .flexnav li > ul { position: absolute; top: auto; left: 0; }
+  .flexnav li > ul li { width: auto; }
+  .flexnav li ul li > ul { margin-left: 100%; top: 0; }
+  .flexnav li ul li a { border-bottom: none; }
+  .flexnav li ul.open { display: block; opacity: 1; visibility: visible; z-index: 1; }
+  .flexnav li ul.open li { overflow: visible; max-height: 100px; }
+  .flexnav li ul.open ul.open { margin-left: 100%; top: 0; }
+  .menu-button { display: none; } }
+.oldie body.one-page { padding-top: 70px; }
+.oldie .flexnav { overflow: visible; }
+.oldie .flexnav.one-page { top: 0; right: auto; max-width: 1080px; }
+.oldie .flexnav li { position: relative; list-style: none; float: left; display: block; width: 20%; min-height: 50px; overflow: visible; }
+.oldie .flexnav li:hover > ul { display: block; width: 100%; overflow: visible; }
+.oldie .flexnav li:hover > ul li { width: 100%; float: none; }
+.oldie .flexnav li a { border-left: 1px solid #acaca1; border-bottom: none; overflow: visible; }
+.oldie .flexnav li > ul { position: absolute; top: auto; left: 0; display: none; z-index: 1; overflow: visible; }
+.oldie .flexnav li ul li ul { top: 0; }
+.oldie .flexnav li ul li a { border-bottom: none; }
+.oldie .flexnav li ul.open { display: block; width: 100%; overflow: visible; }
+.oldie .flexnav li ul.open li { width: 100%; }
+.oldie .flexnav li ul.open ul.open { margin-left: 100%; top: 0; display: block; width: 100%; overflow: visible; }
+.oldie .flexnav ul li:hover ul { margin-left: 100%; top: 0; }
+.oldie .menu-button { display: none; }
+.oldie.ie7 .flexnav li { width: 19.9%; }
 
 /* @end */
