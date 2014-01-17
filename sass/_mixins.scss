@@ -41,6 +41,35 @@
 	}
 }
 
+// Vertical grid
+
+@mixin vertical-grid($number){
+    
+    $unit: strip-unit($number);
+    
+    $hdfile : 'vg-' + $unit;
+    $hdtype: 'png';
+    $hdwidth: '1px';
+    $hdheight: $unit + 'px';
+    
+    
+    $filename: $hdfile + '.' + $hdtype;
+    $hdfilename: $hdfile + '@2x.' + $hdtype;
+    
+    * {
+        background-color: transparent !important;
+        background-image: none !important;
+        background: none !important;
+    }
+    background-repeat: repeat;
+    background-image: url('../images/' + $filename);
+	@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+		background-image: url('../images/' + $hdfilename) !important;
+		-webkit-background-size: $hdwidth $hdheight;
+		        background-size: $hdwidth $hdheight;
+	}
+}
+
 // sticky positioning
 
 @mixin position-sticky {
